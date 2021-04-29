@@ -38,6 +38,7 @@ def get_args_from_command_line():
     parser.add_argument('--epoch', dest='epoch', help='number of epoches', default=cfg.TRAIN.NUM_EPOCHES, type=int)
     parser.add_argument('--weights', dest='weights', help='Initialize network from the weights file', default=None)
     parser.add_argument('--out', dest='out_path', help='Set output path', default=cfg.DIR.OUT_PATH)
+    parser.add_argument('--in', dest='input_path', help='Set input path')
     args = parser.parse_args()
     return args
 
@@ -60,6 +61,8 @@ def main():
         cfg.CONST.WEIGHTS = args.weights
         if not args.test:
             cfg.TRAIN.RESUME_TRAIN = True
+    if args.input_path is not None:
+        cfg.DIR.IN_PATH = args.input_path
 
     # Print config
     print('Use config:')
@@ -74,7 +77,7 @@ def main():
         train_net(cfg)
     else:
         if 'WEIGHTS' in cfg.CONST and os.path.exists(cfg.CONST.WEIGHTS):
-            test_single_img(cfg)
+            test_single_img(cfg, cfg.DIR.IN_PATH, cfg.CONST.WEIGHTS, cfg.DIR.OUT_PATH)
         else:
             print('[FATAL] %s Please specify the file path of checkpoint.' % (dt.now()))
             sys.exit(2)
