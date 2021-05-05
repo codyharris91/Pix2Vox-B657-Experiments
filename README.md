@@ -2,6 +2,7 @@
 Implementation of "Pix2Vox: Context-aware 3D Reconstruction from Single and Multi-view Images" (Xie et al., ICCV 2019)
 
 See the original Readme here:
+  
 https://github.com/codyharris91/Pix2Vox-B657-Experiments/blob/master/original_README.md
 
 ShapeNet Data Download:
@@ -32,9 +33,9 @@ To a number you would like. You might need to also change __C.CONST.BATCH_SIZE d
 
 Navigate to the directory of this project and run the following command
 
-'''
+```
 python3 runner.py --weights=/folder/with/weights/weights.pth
-'''
+```
 
 This will output the best weights every 10 epochs (can be changed in the config file) into the /output/checkpoints folder.
 
@@ -44,16 +45,16 @@ To choose the images tested on, follow the instructions from the Training sectio
 
 The following command runs a test of the pretrained weights used to output some summary statistics of the results
 
-'''
+```
 python3 runner.py --test --weights=/folder/with/weights/weights.pth
-'''
+```
 
 ## View the results of a single image run through the network
 
 Use the following command:
 
-'''
+```
 python3 runner-single.py --test --in=/image.png --out=/output/folder/ --weights=/folder/with/weights/weights.pth
-'''
+```
 
 This will output an image to the specified output folder that is the estimated model for the image specified.
