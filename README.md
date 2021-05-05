@@ -6,10 +6,12 @@ See the original Readme here:
 https://github.com/codyharris91/Pix2Vox-B657-Experiments/blob/master/original_README.md
 
 ShapeNet Data Download:
+  
 http://cvgl.stanford.edu/data2/ShapeNetRendering.tgz
 http://cvgl.stanford.edu/data2/ShapeNetVox32.tgz
 
 Pre-Trained Weights from Our Experiments:
+  
 https://drive.google.com/drive/folders/13dFtxluwZVHGzdwDFGc6fAkexoH60vlk?usp=sharing
 
 ## Preliminary steps to implement
